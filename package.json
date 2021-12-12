@@ -1,0 +1,6 @@
+{
+  "scripts": {
+    "build": "docker build . -t artursudnik/ganache-cli",
+    "push": "docker push artursudnik/ganache-cli"
+  }
+}
