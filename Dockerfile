@@ -1,5 +1,7 @@
 FROM node:lts-alpine
 
+ENV DOCKER=true
+
 RUN apk add --no-cache su-exec
 
 VOLUME /data
@@ -15,4 +17,4 @@ COPY ./entrypoint.sh .
 
 ENTRYPOINT ["./entrypoint.sh"]
 
-CMD ["ganache-cli", "-h", "0.0.0.0"]
+CMD ["ganache-cli"]
