@@ -15,6 +15,8 @@ EXPOSE 8545
 
 COPY ./entrypoint.sh .
 
+HEALTHCHECK --interval=2s --timeout=2s --start-period=2s --retries=30 CMD netstat -ltn | grep -c 8545
+
 ENTRYPOINT ["./entrypoint.sh"]
 
 CMD ["ganache-cli"]
